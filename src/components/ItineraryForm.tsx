@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { MarkdownOutput } from './MarkdownOutput'
+import { DateTimePicker } from './DateTimePicker'
 
 export const ItineraryForm: React.FC<ItineraryFormProps> = ({ onSubmit, isLoading, content }) => {
     const [cities, setCities] = useState<string[]>([])
@@ -73,24 +74,19 @@ export const ItineraryForm: React.FC<ItineraryFormProps> = ({ onSubmit, isLoadin
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">Start Date & Time</label>
-                            <Input
-                                type="datetime-local"
-                                value={startDateTime}
-                                onChange={(e) => setStartDateTime(e.target.value)}
-                                className="bg-gray-800 border-gray-700 text-white"
-                                required
+                            <label className="block font-semibold text-gray-200 mb-3 tracking-wide text-xs">Start Date & Time</label>
+                            <DateTimePicker
+                                onChange={(date) => setStartDateTime(date)}
+                                className="bg-gray-800 p-3 border-gray-700 text-white rounded-lg"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">End Date & Time</label>
-                            <Input
-                                type="datetime-local"
-                                value={endDateTime}
-                                onChange={(e) => setEndDateTime(e.target.value)}
-                                className="bg-gray-800 border-gray-700 text-white"
-                                required
+                            <label className="block font-semibold text-gray-200 mb-3 tracking-wide text-xs">End Date & Time</label>
+                            <DateTimePicker
+                                onChange={(date) => setEndDateTime(date)}
+                                className="bg-gray-800 p-3 border-gray-700 text-white rounded-lg"
                             />
                         </div>
                     </div>
