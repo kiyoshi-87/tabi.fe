@@ -13,8 +13,8 @@ function HowItWorks() {
                             <span className="text-white font-semibold text-sm">1</span>
                         </div>
                         <div>
-                            <h3 className="text-xl font-semibold mb-2">Add Your Destinations</h3>
-                            <p className="text-gray-400">
+                            <h3 className="text-xl text-left font-semibold mb-2">Add Your Destinations</h3>
+                            <p className="text-gray-400 text-left">
                                 Enter the cities you want to visit and specify your travel dates and preferences.
                             </p>
                         </div>
@@ -25,8 +25,8 @@ function HowItWorks() {
                             <span className="text-white font-semibold text-sm">2</span>
                         </div>
                         <div>
-                            <h3 className="text-xl font-semibold mb-2">AI Generates Your Plan</h3>
-                            <p className="text-gray-400">
+                            <h3 className="text-xl text-left font-semibold mb-2">AI Generates Your Plan</h3>
+                            <p className="text-gray-400 text-left">
                                 Our AI analyzes your inputs and creates a detailed, day-by-day itinerary with activities and
                                 recommendations.
                             </p>
@@ -38,8 +38,8 @@ function HowItWorks() {
                             <span className="text-white font-semibold text-sm">3</span>
                         </div>
                         <div>
-                            <h3 className="text-xl font-semibold mb-2">Customize & Go</h3>
-                            <p className="text-gray-400">
+                            <h3 className="text-xl text-left font-semibold mb-2">Customize & Go</h3>
+                            <p className="text-gray-400 text-left">
                                 Review, customize your itinerary as needed, and embark on your perfectly planned adventure.
                             </p>
                         </div>

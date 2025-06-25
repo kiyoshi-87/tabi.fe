@@ -2,7 +2,7 @@ import './App.css'
 import { useKeycloak } from '@react-keycloak/web';
 import SkeletonProgress from './components/SkeletonProgress'
 
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 
 function App() {
@@ -18,7 +18,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home keycloak={keycloak} />} />
+      <Route path="/home" element={<Home keycloak={keycloak} />} />
+      <Route path="/" element={<Navigate to="/home" />} />
     </Routes>
   );
 }
