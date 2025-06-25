@@ -25,9 +25,11 @@ export const useItineraryResponse = (): ItineraryResponseState => {
     setContent('')
 
     try {
+      const token = localStorage.getItem('keycloak_token');
       const response = await axios.post<ItineraryResponse>(API_URL, requestData, {
         headers: {
           'Content-Type': 'application/json',
+          ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
         },
       })
       console.log(response.data.data)
