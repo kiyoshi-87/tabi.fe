@@ -1,28 +1,26 @@
-import { useItineraryResponse } from './hooks/useItineraryResponse'
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { MainContent } from './components/MainContent'
 import './App.css'
+import { useKeycloak } from '@react-keycloak/web';
+import SkeletonProgress from './components/SkeletonProgress'
+
+import { Route, Routes } from 'react-router-dom'
+import Home from './components/Home'
 
 function App() {
-  const { content, isLoading, error, generateItinerary } = useItineraryResponse()
+  const { keycloak, initialized } = useKeycloak();
+
+
+  if (!initialized) return (<div><SkeletonProgress /></div>);
+  if (!keycloak.authenticated) {
+    keycloak.login();
+    return null;
+  }
+  if (keycloak.authenticated && !keycloak.token) return <div>Authentication error. Please try again.</div>;
 
   return (
-    <div className="min-h-screen w-full bg-gray-950">
-      <Header />
-      <main className="w-full py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto w-full">
-          <Hero />
-          <MainContent
-            content={content || ''}
-            isLoading={isLoading}
-            error={error}
-            generateItinerary={generateItinerary}
-          />
-        </div>
-      </main>
-    </div>
-  )
+    <Routes>
+      <Route path="/" element={<Home keycloak={keycloak} />} />
+    </Routes>
+  );
 }
 
 export default App

@@ -18,9 +18,8 @@ export const useItineraryResponse = (): ItineraryResponseState => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const API_URL = 'http://localhost:8080/api/v1/ollama/generate'
-
   const generateItinerary = useCallback(async (requestData: ItineraryRequest) => {
+    const API_URL = import.meta.env.VITE_BACK_END_URL + '/ollama/generate'
     setIsLoading(true)
     setError(null)
     setContent('')

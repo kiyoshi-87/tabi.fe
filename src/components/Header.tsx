@@ -1,5 +1,6 @@
 import { MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
     return (
@@ -7,7 +8,9 @@ export const Header = () => {
             <div className="container mx-auto px-4 py-4 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                     <MapPin className="h-6 w-6 text-blue-400" />
-                    <span className="text-xl font-semibold">TravelPlan</span>
+                    <Link to="/">
+                        <span className="text-2xl font-semibold">Tabi.ai</span>
+                    </Link>
                 </div>
                 <nav className="hidden md:flex items-center space-x-6">
                     <a href="#features" className="text-gray-300 hover:text-white transition-colors">
