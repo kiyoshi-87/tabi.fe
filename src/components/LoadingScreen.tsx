@@ -27,7 +27,7 @@ export default function LoadingScreen() {
             setTimeout(() => {
                 setCurrentMessageIndex((prev) => (prev + 1) % loadingMessages.length)
                 setIsVisible(true)
-            }, 300) // Half second for fade out, then fade in
+            }, 300)
         }, 5000)
 
         return () => clearInterval(interval)
@@ -42,7 +42,7 @@ export default function LoadingScreen() {
                 <div
                     className="absolute inset-0"
                     style={{
-                        backgroundImage: `radial-gradient(circle at 25% 25%, #3B82F6 0%, transparent 50%), 
+                        backgroundImage: `radial-gradient(circle at 25% 25%, #3B82F6 0%, transparent 50%),
                            radial-gradient(circle at 75% 75%, #8B5CF6 0%, transparent 50%)`,
                     }}
                 />
@@ -113,7 +113,7 @@ export default function LoadingScreen() {
                 {/* Brand */}
                 <div className="mt-8 flex items-center justify-center space-x-2 text-gray-400">
                     <MapPin className="h-4 w-4 text-blue-400" />
-                    <span className="text-sm font-medium">TravelPlan</span>
+                    <span className="text-sm font-medium">Tabi.ai</span>
                 </div>
             </div>
 
